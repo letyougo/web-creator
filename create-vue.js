@@ -9,7 +9,7 @@ const yn = require('yn');
 const request = require('axios')
 const _ = require('underscore')
 const ejs = require('ejs')
-
+const nunjucks = require('nunjucks')
 
 
 async function main() {
@@ -173,15 +173,15 @@ async function main() {
             label:label.label,
             type:type.type
         }
-        if(obj.type == 'select'){
-            obj.select =await get_select()
-        }
-        if(obj.type == 'checkbox'){
-            obj.checkbox = await get_checkbox()
-        }
-        if(obj.type == 'radio'){
-            obj.radio = await get_radio()
-        }
+        // if(obj.type == 'select'){
+        //     obj.select =await get_select()
+        // }
+        // if(obj.type == 'checkbox'){
+        //     obj.checkbox = await get_checkbox()
+        // }
+        // if(obj.type == 'radio'){
+        //     obj.radio = await get_radio()
+        // }
         data_map.push(obj)
     }
     console.log(data_map)
